@@ -1,1 +1,40 @@
-teste
+
+ <style>
+        label {
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        button {
+            margin-top: 5px;
+        }
+ </style>
+ <form>
+        <label>Nome e sobrenome:</label>
+        <input type="text" id="nomeCompleto">
+
+        <button type="button" onclick="separar()">>></button>
+
+        <br><br>
+
+        <label>Nome:</label>
+        <input type="text" id="nome">
+
+        <label>Sobrenome:</label>
+        <input type="text" id="sobrenome">
+    </form>
+
+    <script>
+        function separar() {
+            var nomeCompleto = document.getElementById("nomeCompleto").value;
+            var partes = nomeCompleto.split(" ");
+
+            document.getElementById("nome").value = partes[0] || "";
+            document.getElementById("sobrenome").value = partes.slice(1).join(" ") || "";
+        }
+    </script>
+    
