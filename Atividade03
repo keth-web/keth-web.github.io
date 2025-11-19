@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotron 2000</title>
+
+    <style>
+        /* Deixa tudo organizado e simples */
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mudar Cor do Robotron</h1>
+    <p>Clique nos botões para trocar a cor:</p>
+
+    <!-- Área onde ficam os botões e a imagem -->
+    <div>
+        <button id="btn-prev"><<</button>
+
+        <img id="robotron-img" src="img/robotron-rosa.png" alt="Robotron">
+
+        <button id="btn-next">>></button>
+    </div>
+
+    <script>
+        // Lista das imagens do robotron na ordem desejada
+        const imagens = [
+            "img/robotron-rosa.png",
+            "img/robotron-amarelo.png",
+            "img/robotron-azul.png",
+            "img/robotron-preto.png",
+            "img/robotron-vermelho.png",
+            "img/robotron-branco.png"
+        ];
+
+        // Pegando a imagem e os botões
+        const imgElement = document.getElementById("robotron-img");
+        const btnPrev = document.getElementById("btn-prev");
+        const btnNext = document.getElementById("btn-next");
+
+        // Qual imagem está sendo mostrada
+        let indiceAtual = 0;
+
+        // Função que troca a imagem na tela
+        function atualizarImagem() {
+            imgElement.src = imagens[indiceAtual];
+        }
+
+        // Quando clicar no botão <<
+        btnPrev.addEventListener("click", function() {
+            if (indiceAtual === 0) {
+                indiceAtual = imagens.length - 1; // Vai para a última imagem
+            } else {
+                indiceAtual--; // Volta uma imagem
+            }
+            atualizarImagem();
+        });
+
+        // Quando clicar no botão >>
+        btnNext.addEventListener("click", function() {
+            if (indiceAtual === imagens.length - 1) {
+                indiceAtual = 0; // Volta para a primeira imagem
+            } else {
+                indiceAtual++; // Avança uma imagem
+            }
+            atualizarImagem();
+        });
+    </script>
+
+</body>
+</html>
