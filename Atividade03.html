@@ -3,58 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotron 2000</title>
+    <title>Robotron Simples</title>
 
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            margin-top: 40px;
-        }
-
-        button {
-            font-size: 20px;
-            padding: 10px 15px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 6px;
-            border: none;
-            background-color: #ddd;
-        }
-
-        button:hover {
-            background-color: #ccc;
+            font-family: Arial;
         }
 
         img {
-            width: 300px;
-            height: auto;
+            width: 250px;
+        }
+
+        button {
+            font-size: 18px;
+            margin: 10px;
         }
     </style>
 </head>
-
 <body>
 
-    <h1>Mudar Cor do Robotron</h1>
-    <p>Clique nos botões para trocar a cor:</p>
+    <h2>Mudar Cor do Robotron</h2>
 
-    <!-- IMAGEM QUE SERÁ TROCADA -->
-    <img id="robotron-img" src="robotron-rosa.png" alt="Robotron">
+    
+    <img id="robotron" src="robotron-rosa.png">
 
-    <div class="container">
-        <button id="btn-prev">&lt;&lt;</button>
-        <button id="btn-next">&gt;&gt;</button>
-    </div>
+    <br>
+
+    
+    <button id="voltar"><<</button>
+    <button id="avancar">>></button>
 
     <script>
-        // Lista com os nomes das imagens
-        const imagens = [
+        
+        let imagens = [
             "robotron-rosa.png",
             "robotron-amarelo.png",
             "robotron-azul.png",
@@ -63,26 +45,30 @@
             "robotron-branco.png"
         ];
 
-        const imgElement = document.getElementById("robotron-img");
-        const btnPrev = document.getElementById("btn-prev");
-        const btnNext = document.getElementById("btn-next");
+        
+        let indice = 0;
 
-        let indiceAtual = 0;
+    
+        let robo = document.getElementById("robotron");
 
-        function atualizarImagem() {
-            imgElement.src = imagens[indiceAtual];
-        }
+        
+        document.getElementById("voltar").onclick = function () {
+            indice--;
+            if (indice < 0) {
+                indice = imagens.length - 1;
+            }
+            robo.src = imagens[indice];
+        };
 
-        btnPrev.addEventListener("click", () => {
-            indiceAtual = (indiceAtual === 0) ? imagens.length - 1 : indiceAtual - 1;
-            atualizarImagem();
-        });
-
-        btnNext.addEventListener("click", () => {
-            indiceAtual = (indiceAtual === imagens.length - 1) ? 0 : indiceAtual + 1;
-            atualizarImagem();
-        });
+        
+        document.getElementById("avancar").onclick = function () {
+            indice++;
+            if (indice >= imagens.length) {
+                indice = 0;
+            }
+            robo.src = imagens[indice];
+        };
     </script>
 
 </body>
-</html>
+    </html>
