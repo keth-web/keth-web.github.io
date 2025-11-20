@@ -6,7 +6,6 @@
     <title>Robotron 2000</title>
 
     <style>
-        /* CSS dentro do mesmo arquivo */
         body {
             text-align: center;
             font-family: Arial, sans-serif;
@@ -45,59 +44,45 @@
     <h1>Mudar Cor do Robotron</h1>
     <p>Clique nos botões para trocar a cor:</p>
 
+    <!-- IMAGEM QUE SERÁ TROCADA -->
+    <img id="robotron-img" src="robotron-rosa.png" alt="Robotron">
+
     <div class="container">
-        <button id="btn-prev"><<</button>
-
-
-        <button id="btn-next">>></button>
+        <button id="btn-prev">&lt;&lt;</button>
+        <button id="btn-next">&gt;&gt;</button>
     </div>
 
     <script>
-        // JavaScript dentro do mesmo arquivo
-
-        // Lista com as imagens do robotron
+        // Lista com os nomes das imagens
         const imagens = [
-            <img src="robotron-rosa.png">
-            <img src = "robotron-amarelo.png">
-            <img src = "robotron-azul.png">
-            <img src= "robotron-preto.png">
-            <img src= "robotron-vermelho.png">
-            <img src= "robotron-branco.png">
+            "robotron-rosa.png",
+            "robotron-amarelo.png",
+            "robotron-azul.png",
+            "robotron-preto.png",
+            "robotron-vermelho.png",
+            "robotron-branco.png"
         ];
 
-        // Seleciona a imagem e os botões
         const imgElement = document.getElementById("robotron-img");
         const btnPrev = document.getElementById("btn-prev");
         const btnNext = document.getElementById("btn-next");
 
-        // Índice inicial da imagem
         let indiceAtual = 0;
 
-        // Atualiza imagem
         function atualizarImagem() {
             imgElement.src = imagens[indiceAtual];
         }
 
-        // Botão <<
         btnPrev.addEventListener("click", () => {
-            if (indiceAtual === 0) {
-                indiceAtual = imagens.length - 1;
-            } else {
-                indiceAtual--;
-            }
+            indiceAtual = (indiceAtual === 0) ? imagens.length - 1 : indiceAtual - 1;
             atualizarImagem();
         });
 
-        // Botão >>
         btnNext.addEventListener("click", () => {
-            if (indiceAtual === imagens.length - 1) {
-                indiceAtual = 0;
-            } else {
-                indiceAtual++;
-            }
+            indiceAtual = (indiceAtual === imagens.length - 1) ? 0 : indiceAtual + 1;
             atualizarImagem();
         });
     </script>
 
 </body>
-        </html>
+</html>
