@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pré-Matrícula</title>
+</head>
+
+<body>
+
+<h2>Pré-Matrícula</h2
+                   
+Nome do Aluno:<br>
+<input id="aluno"><br><br>
+
+Nascimento (dd/mm/aaaa):<br>
+<input id="nasc"><br><br>
+
+Nome da Mãe:<br>
+<input id="mae"><br><br>
+
+Nome do Pai:<br>
+<input id="pai"><br><br>
+
+DDD:<br>
+<input id="ddd"><br><br>
+
+Telefone:<br>
+<input id="tel"><br><br>
+
+E-mail:<br>
+<input id="email"><br><br>
+
+<h3>Atividades (máx. 3)</h3>
+<input type="checkbox" class="ativ"> Informática<br>
+<input type="checkbox" class="ativ"> Música<br>
+<input type="checkbox" class="ativ"> Ballet<br>
+<input type="checkbox" class="ativ"> Pintura<br>
+<input type="checkbox" class="ativ"> Judô<br>
+<input type="checkbox" class="ativ"> Futebol<br><br>
+
+<button onclick="enviar()">Enviar Formulário</button>
+
+<script>
+
+
+function enviar() {
+
+    let aluno = document.getElementById("aluno").value;
+    let nasc = document.getElementById("nasc").value;
+    let mae = document.getElementById("mae").value;
+    let pai = document.getElementById("pai").value;
+    let ddd = document.getElementById("ddd").value;
+    let tel = document.getElementById("tel").value;
+    let email = document.getElementById("email").value;
+
+    
+    let ddds = ["11","21","31","41","71","81","82","85","86","92"];
+
+  
+    if (aluno == "" || nasc == "" || mae == "" || pai == "" || ddd == "" || tel == "" || email == "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    
+    if (nasc.length != 10 || nasc[2] != "/" || nasc[5] != "/") {
+        alert("Data inválida.");
+        return;
+    }
+
+
+    if (!email.includes("@")) {
+        alert("E-mail inválido.");
+        return;
+    }
+
+    
+    if (!ddds.includes(ddd)) {
+        alert("DDD inválido.");
+        return;
+    
+
+    
+    let atividadesMarcadas = document.querySelectorAll(".ativ:checked");
+    if (atividadesMarcadas.length > 3) {
+        alert("Máximo de 3 atividades!");
+        return;
+    }
+
+    alert("Cadastro realizado com sucesso!");
+}
+</script>
+
+</body>
+</html>
