@@ -7,8 +7,8 @@
 
 <body>
 
-<h2>Pré-Matrícula</h2
-                   
+<h2>Pré-Matrícula</h2>
+
 Nome do Aluno:<br>
 <input id="aluno"><br><br>
 
@@ -41,50 +41,46 @@ E-mail:<br>
 <button onclick="enviar()">Enviar Formulário</button>
 
 <script>
-
-
 function enviar() {
 
-    let aluno = document.getElementById("aluno").value;
-    let nasc = document.getElementById("nasc").value;
-    let mae = document.getElementById("mae").value;
-    let pai = document.getElementById("pai").value;
-    let ddd = document.getElementById("ddd").value;
-    let tel = document.getElementById("tel").value;
-    let email = document.getElementById("email").value;
+    let aluno = document.getElementById("aluno").value.trim();
+    let nasc = document.getElementById("nasc").value.trim();
+    let mae = document.getElementById("mae").value.trim();
+    let pai = document.getElementById("pai").value.trim();
+    let ddd = document.getElementById("ddd").value.trim();
+    let tel = document.getElementById("tel").value.trim();
+    let email = document.getElementById("email").value.trim();
 
-    
     let ddds = ["11","21","31","41","71","81","82","85","86","92"];
 
-  
-    if (aluno == "" || nasc == "" || mae == "" || pai == "" || ddd == "" || tel == "" || email == "") {
-        alert("Preencha todos os campos!");
-        return;
+    // ---- CAMPOS OBRIGATÓRIOS ----
+    if (aluno === "") return alert("O campo 'Nome do Aluno' está vazio.");
+    if (nasc === "") return alert("O campo 'Nascimento' está vazio.");
+    if (mae === "") return alert("O campo 'Nome da Mãe' está vazio.");
+    if (pai === "") return alert("O campo 'Nome do Pai' está vazio.");
+    if (ddd === "") return alert("O campo 'DDD' está vazio.");
+    if (tel === "") return alert("O campo 'Telefone' está vazio.");
+    if (email === "") return alert("O campo 'E-mail' está vazio.");
+
+    // ---- VALIDAÇÃO DA DATA ----
+    if (!/^\d{2}\/\d{2}\/\d{4}$/.test(nasc)) {
+        return alert("A data de nascimento é inválida! Use o formato dd/mm/aaaa.");
     }
 
-    
-    if (nasc.length != 10 || nasc[2] != "/" || nasc[5] != "/") {
-        alert("Data inválida.");
-        return;
-    }
-
-
+    // ---- VALIDAÇÃO DO E-MAIL ----
     if (!email.includes("@")) {
-        alert("E-mail inválido.");
-        return;
+        return alert("O e-mail digitado é inválido! Falta o @.");
     }
 
-    
+    // ---- VALIDAÇÃO DO DDD ----
     if (!ddds.includes(ddd)) {
-        alert("DDD inválido.");
-        return;
-    
+        return alert("O DDD informado não é válido no Brasil.");
+    }
 
-    
-    let atividadesMarcadas = document.querySelectorAll(".ativ:checked");
-    if (atividadesMarcadas.length > 3) {
-        alert("Máximo de 3 atividades!");
-        return;
+    // ---- ATIVIDADES ----
+    let atividades = document.querySelectorAll(".ativ:checked");
+    if (atividades.length > 3) {
+        return alert("Você marcou mais de 3 atividades. Escolha no máximo 3.");
     }
 
     alert("Cadastro realizado com sucesso!");
