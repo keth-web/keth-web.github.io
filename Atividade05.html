@@ -53,7 +53,7 @@ function enviar() {
 
     let ddds = ["11","21","31","41","71","81","82","85","86","92"];
 
-    // ---- CAMPOS OBRIGATÓRIOS ----
+    
     if (aluno === "") return alert("O campo 'Nome do Aluno' está vazio.");
     if (nasc === "") return alert("O campo 'Nascimento' está vazio.");
     if (mae === "") return alert("O campo 'Nome da Mãe' está vazio.");
@@ -62,22 +62,20 @@ function enviar() {
     if (tel === "") return alert("O campo 'Telefone' está vazio.");
     if (email === "") return alert("O campo 'E-mail' está vazio.");
 
-    // ---- VALIDAÇÃO DA DATA ----
+  
     if (!/^\d{2}\/\d{2}\/\d{4}$/.test(nasc)) {
         return alert("A data de nascimento é inválida! Use o formato dd/mm/aaaa.");
     }
 
-    // ---- VALIDAÇÃO DO E-MAIL ----
     if (!email.includes("@")) {
         return alert("O e-mail digitado é inválido! Falta o @.");
     }
 
-    // ---- VALIDAÇÃO DO DDD ----
+   
     if (!ddds.includes(ddd)) {
         return alert("O DDD informado não é válido no Brasil.");
     }
 
-    // ---- ATIVIDADES ----
     let atividades = document.querySelectorAll(".ativ:checked");
     if (atividades.length > 3) {
         return alert("Você marcou mais de 3 atividades. Escolha no máximo 3.");
