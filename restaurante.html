@@ -1,228 +1,610 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>Maison Lumière</title>
+ <!-- BOOTSTRAP CSS -->
+ <link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+ <title>Restaurante - Site Base</title>
 
-  <style>
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background-image: url("https://pic.616pic.com/bg_w1180/00/22/77/VHu7EzNAXT.jpg!/fw/1120");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+ <style>  
 
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.7) !important;
-    }
+body {
+  font-family: Georgia, "Times New Roman", serif;
 
-    .nav-link:hover {
-      color: #e6c89c !important;
-    }
+  background-image: url("https://pic.616pic.com/bg_w1180/00/22/77/VHu7EzNAXT.jpg!/fw/1120");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-    section {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 30px;
-      margin: 25px 0;
-    }
+/* Navbar simples */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
 
-    h1, h2, h3 {
-      font-family: Garamond, Georgia, serif;
-      font-weight: bold;
-      color: #4a3628;
-    }
+.nav-link:hover {
+  color: #e6c89c !important;
+}
 
-    .btn-primary {
-      background-color: #6e4e33;
-      border-color: #6e4e33;
-    }
+/* Seções básicas */
+section {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 25px 0;
+}
 
-    .btn-primary:hover {
-      background-color: #5b412b;
-      border-color: #5b412b;
-    }
+/* Títulos elegantes */
+h1, h2, h3 {
+  font-family: Garamond, Georgia, serif;
+  font-weight: bold;
+  color: #4a3628;
+}
 
-    #carouselSimples {
-      border-radius: 15px;
-      overflow: hidden;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+/* Cards */
+.card {
+  border-radius: 10px;
+}
 
-    .carousel-item img {
-      width: 100%;
-      height: 60vh;
-      min-height: 280px;
-      max-height: 450px;
-      object-fit: cover;
-    }
+/* Botão */
+.btn-primary {
+  background-color: #6e4e33;
+  border-color: #6e4e33;
+}
 
-    .stars {
-      color: #d4a017;
-    }
+.btn-primary:hover {
+  background-color: #5b412b;
+  border-color: #5b412b;
+}
+#carouselSimples {
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    @media (max-width: 768px) {
-      section {
-        padding: 20px;
-        margin: 15px 10px;
-      }
+/* As imagens preenchem, ficam bonitas e cortam só o necessário */
+.carousel-item img {
+  width: 100%;
+  height: 450px;        /* altura bonita e equilibrada */
+  object-fit: cover;    /* preenche e fica bonito */
+  object-position: center;
+}
+.depoimentos h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.5rem; }
-      h3 { font-size: 1.2rem; }
+.stars {
+  color: #d4a017; /* cor das estrelas */
+}
+</style>
 
-      p, li {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+ </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Maison Lumière</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+ <!-- ================== NAVBAR ================== -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+   <div class="container">
+     <a class="navbar-brand" href="#">Maison Lumière</a>
 
-    <div class="collapse navbar-collapse" id="menuNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
-        <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-      </ul>
+
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+
+     <div class="collapse navbar-collapse" id="menuNavbar">
+       <ul class="navbar-nav ms-auto">
+         <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+         <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+         <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+         <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+         <li class="nav-item"><a class="nav-link" href="#contato">Fale Conosco</a></li>
+         <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos Online</a></li>
+         <li class="nav-item"><a class="nav-link" href="#promocoes">Promoções</a></li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+
+
+ <!-- ================== 1. PÁGINA INICIAL ================== -->
+ <section id="inicio" class="bg-light py-5">
+   <div class="container">
+     <h1 class="mb-3">Página Inicial</h1>
+     <p>
+Bienvenue ao nosso restaurante!
+É uma alegria receber você em um espaço onde a culinária francesa ganha vida com charme e cuidado. Cada prato é preparado com dedicação, inspirado nos sabores clássicos da França e pensado para criar momentos especiais.
+
+Sinta-se à vontade, aproveite o ambiente acolhedor e permita que nossa equipe torne sua experiência deliciosa e memorável.
+
+     </p>
+     <p>
+    O restaurante oferece culinária francesa contemporânea, com pratos sofisticados e preparados com ingredientes selecionados. Voltado para casais, famílias e amantes da boa gastronomia, o ambiente combina elegância e aconchego, criando um clima romântico e acolhedor.
+     </p>
+
+
+     <!-- TODO: Adicionar um carousel ou imagem de destaque aqui -->
+     <p class="mt-4">
+     <div id="carouselSimples" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="IMG-20251211-WA0021.jpg" (1).png" alt="">
+    </div>
+
+    <div class="carousel-item">
+      <img src="IMG-20251211-WA0023.jpg"" (2).png" alt="">
+    </div>
+
+    <div class="carousel-item">
+      <img src="IMG-20251211-WA0024.jpg"" (3).png" alt="">
+    </div>
+  <div class="carousel-item">
+      <img src="IMG-20251211-WA0024(1).jpg"".png" alt="">
     </div>
   </div>
-</nav>
 
-<!-- INÍCIO -->
-<section id="inicio">
-  <div class="container">
-    <h1>Página Inicial</h1>
-    <p>Bienvenue ao nosso restaurante! Um espaço onde a culinária francesa ganha vida com charme, elegância e sabores inesquecíveis.</p>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselSimples" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
 
-    <div id="carouselSimples" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselSimples" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 
-        <div class="carousel-item active">
-          <img src="IMG-20251211-WA0021.jpg" alt="Prato francês">
-        </div>
+</div>
 
-        <div class="carousel-item">
-          <img src="IMG-20251211-WA0023.jpg" alt="Ambiente do restaurante">
-        </div>
+     </p>
 
-        <div class="carousel-item">
-          <img src="IMG-20251211-WA0024.jpg" alt="Prato especial">
-        </div>
 
-        <div class="carousel-item">
-          <img src="IMG-20251211-WA0024(1).jpg" alt="Sobremesa">
-        </div>
+     <!-- TODO: Inserir horários de funcionamento (tabela ou lista) -->
+     <p class="mt-4">
+       Horário de Funcionamento.
 
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselSimples" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselSimples" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-
-    <h3 class="mt-4">Horário de Funcionamento</h3>
-    <ul>
+      <ul>
       <li>Segunda a Quinta: 18h às 23h</li>
-      <li>Sexta: 18h às 00h</li>
-      <li>Sábado: 12h às 15h • 18h às 00h</li>
-      <li>Domingo: 12h às 16h</li>
-    </ul>
+        <li>Sexta: 18h às 00h</li>
+        <li>Sábado: 12h às 15h • 18h às 00h</li>
+        <li>Domingo: 12h às 16h</li>
+       </ul>
+       </p>
+     <p>Reservas recomendadas para o jantar</p>
+   </div>
+ </section>
+
+
+ <!-- ================== 2. CARDÁPIO ================== -->
+ <section id="cardapio" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Cardápio</h2>
+     <p>
+Nosso cardápio reúne clássicos franceses preparados com elegância. Organizado em entradas, pratos principais e sobremesas, oferece opções sofisticadas, sabores delicados e combinações harmoniosas para uma experiência gastronômica inesquecível.
+ </p>
+
+
+     <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
+   <ul style="list-style: none; padding: 0;">
+  <h2>Entradas</h2>
+  <li>
+    <strong>Bruschetta Provençal</strong><br>
+    Massa artesanal tostada com tomate fresco, azeite e manjericão.<br>
+    <span>R$ 18,00</span>
+    <br><br>
+  </li>
+
+  <li>
+    <strong>Cream de Cebola Caramelizada</strong><br>
+    Sopa leve com toque adocicado e finalização com croûtons.<br>
+    <span>R$ 22,00</span>
+    <br><br>
+  </li>
+
+  <h2>Pratos Principais</h2>
+  <li>
+    <strong>Filé ao Molho de Vinho Bordeaux</strong><br>
+    Filé mignon grelhado com molho encorpado de vinho tinto e ervas.<br>
+    <span>R$ 58,00</span>
+    <br><br>
+  </li>
+
+  <li>
+    <strong>Risoto de Limão Siciliano e Camarão</strong><br>
+    Arroz arbóreo cremoso com raspas cítricas e camarões salteados.<br>
+    <span>R$ 69,00</span>
+    <br><br>
+  </li>
+
+  <h2>Sobremesas</h2>
+  <li>
+    <strong>Crème Brûlée Clássico</strong><br>
+    Creme aveludado com cobertura crocante de açúcar queimado.<br>
+    <span>R$ 24,00</span>
+    <br><br>
+  </li>
+<h2>Bebidas</h2>
+  <li>
+    <strong>Limonada Artesanal</strong><br>
+    Feita com limões frescos e toque leve de hortelã.<br>
+    <span>R$ 12,00</span>
+    <br><br>
+  </li>
+
+  
+  <li>
+    <strong>Vinho Tinto da Casa</strong><br>
+    Blend francês suave e aromático.<br>
+    <span>Taça: R$ 22,00</span>
+    <br><br>
+  </li>
+<h2>Especiais do Dia</h2>
+  <li>
+    <strong>Salmão ao Molho de Maracujá — *Especial do Dia*</strong><br>
+    Filé de salmão grelhado com molho agridoce de maracujá fresco.<br>
+    <span>R$ 64,00</span>
+    <br><br>
+  </li>
+
+  <li>
+    <strong>Ravioli de Abóbora com Manteiga de Sálvia — *Prato Sazonal*</strong><br>
+    Prato leve, aromático e artesanal.<br>
+    <span>R$ 52,00</span>
+    <br><br>
+  </li>
+
+</ul>
+      
+
+   </div>
+ </section>
+
+
+ <!-- ================== 3. SOBRE NÓS ================== -->
+ <section id="sobre" class="bg-light py-5">
+   <div class="container">
+     <h2 class="mb-3">Sobre Nós</h2>
+
+
+     <h3 class="h5 mt-3">História do Restaurante</h3>
+     <p>
+      O Maison Lumière surgiu do desejo do chef Étienne Moreau de criar um espaço onde a elegância francesa ganhasse vida. Inspirado pelos sabores da Provence e pela tradição dos bistrôs parisienses, ele idealizou um restaurante que une técnica, autenticidade e acolhimento.
+
+     </p><br>
+     <p>A missão do Maison Lumière é oferecer uma experiência gastronômica refinada, guiada por ingredientes frescos e pelo respeito à culinária francesa clássica.
+</p><br>
+
+     <h3 class="h5 mt-3">Perfil do Chef</h3>
+     <p>
+       O Maison Lumière é comandado pelo chef Étienne Moreau, especialista em culinária francesa clássica e conhecido por sua técnica refinada. Após anos em cozinhas renomadas de Paris, desenvolveu um estilo que valoriza sabores autênticos, apresentação elegante e atenção absoluta aos detalhes.
+Sua filosofia é simples: transformar cada prato em uma experiência memorável.
+ </p>
+
+
+     <h3 class="h5 mt-3">Prêmios e Reconhecimentos</h3>
+   <ul>
+  <li>Melhor Restaurante Francês de Maceió - Revista Gourmet (2024)</li><br>
+  <li>Destaque em Gastronomia Local - Blog Sabores do Nordeste (2023)</li><br>
+  <li>Chef Revelação do Ano - Guia Gastronômico Nacional (2022)</li><br>
+  <li>Experiência Gastronômica de Excelência - Prêmio Sabor & Arte (2025)</li><br>
+</ul>
+ </section>
+
+
+ <!-- ================== 4. RESERVAS ================== -->
+ 
+   <div class="container">
+     <h2 class="mb-3">Reservas</h2>
+
+
+
+<div class="card-body">
+
+  <form>
+
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" id="nome" class="form-control" placeholder="">
+    </div>
+
+    <div class="mb-3">
+      <label for="qtPessoas" class="form-label">Quantidade de Pessoas</label>
+      <select id="qtPessoas" class="form-select">
+        <option value="">Selecione</option>
+        <option>12</option>
+        <option>2</option>
+        <option>8</option>
+        <option>4</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" id="email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="telefone" class="form-label">Telefone</label>
+      <input type="tel" id="telefone" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+
+  </form>
+
+</div>
+
+     <!-- TODO: Formulário Bootstrap de reserva -->
+
+
+     <h3 class="h5 mt-3">Política de Reservas</h3>
+    <p><strong>Cancelamentos:</strong> Reservas podem ser canceladas até 2 horas antes sem cobrança.</p>
+
+<p><strong>Tolerância de atraso:</strong> Aceitamos até 15 minutos de atraso. Após esse tempo, a mesa pode ser liberada.</p>
+
+<p><strong>Confirmação:</strong> Todas as reservas devem ser confirmadas por e-mail ou WhatsApp.</p>
+
+<p><strong>Grupos:</strong> Para grupos acima de 12 pessoas, é necessário entrar em contato com o restaurante e estará sujeito a taxa.</p>
+   </div>
+ </section>
+
+
+ <!-- ================== 5. GALERIA ================== -->
+ <section id="galeria" class="bg-light py-5">
+   <div class="container">
+     
+     <div class="container my-5">
+  <h2 class="text-center mb-4">Nossa Galeria</h2>
+  <div class="row g-3"> <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0008.jpg" class="img-fluid rounded shadow-sm" alt="Descrição do prato">
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0005.jpg" class="img-fluid rounded shadow-sm" alt="Evento no restaurante">
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0010.jpg" class="img-fluid rounded shadow-sm" alt="Interior do restaurante">
+    </div>
+     <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0002.jpg" class="img-fluid rounded shadow-sm" alt="Interior do restaurante">
+    </div>
+     <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0003.jpg" class="img-fluid rounded shadow-sm" alt="Interior do restaurante">
+    </div>
+
+      <div class="col-lg-4 col-md-6">
+      <img src="IMG-20251211-WA0004.jpg" class="img-fluid rounded shadow-sm" alt="Interior do restaurante">
+    </div>
   </div>
+</div>
+
+
+     <!-- TODO: Grid de imagens / cards com fotos -->
+
+
+     <h3 class="h5 mt-3">Avaliações de Clientes</h3>
+     <section class="depoimentos container mt-4">
+
+  <h2>Depoimentos</h2>
+
+  <ul class="list-group">
+
+    <li class="list-group-item">
+      <strong>Maria Silva</strong> — <span class="stars">★★★★★</span><br>
+      Excelente atendimento e comida maravilhosa!
+    </li>
+
+    <li class="list-group-item">
+      <strong>Carlos Souza</strong> — <span class="stars">★★★★☆</span><br>
+      Ambiente muito agradável e pratos saborosos.
+    </li>
+
+    <li class="list-group-item">
+      <strong>Ana Ribeiro</strong> — <span class="stars">★★★★★</span><br>
+      Experiência incrível! Vou voltar com certeza.
+    </li>
+
+  </ul>
+
 </section>
 
-<!-- CARDÁPIO -->
-<section id="cardapio">
-  <div class="container">
-    <h2>Cardápio</h2>
+   </div>
+ </section>
 
-    <ul style="list-style:none; padding:0;">
-      <h3>Entradas</h3>
-      <li><strong>Bruschetta Provençal</strong><br>R$ 18,00</li><br>
 
-      <h3>Pratos Principais</h3>
-      <li><strong>Filé ao Molho Bordeaux</strong><br>R$ 58,00</li><br>
+ <!-- ================== 6. FALE CONOSCO ================== -->
+ <section id="contato" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Fale Conosco</h2>
 
-      <h3>Sobremesas</h3>
-      <li><strong>Crème Brûlée</strong><br>R$ 24,00</li>
-    </ul>
+
+     <h3 class="h5 mt-3">Informações de Contato</h3>
+     <h3 class="h5 mt-3">Informações de Contato</h3>
+
+<div class="container mt-3">
+  <div class="row">
+    
+    <!-- Coluna 1: Informações -->
+    <div class="col-md-6">
+      <p><strong>Endereço:</strong><br>
+      Boulevard des Étoiles, 412 - Bairro Gastronômico, São Paulo - SP.</p>
+
+      <p><strong>Telefone:</strong><br>
+      (11) 3524-8890<br>
+      WhatsApp: (11) 97777-4412</p>
+
+      <p><strong>E-mail:</strong><br>
+      contato@maisonlumiere.com.br</p>
+
+      <p><strong>Horário:</strong><br>
+      Seg a Sex 12h às 15h e 18h às 23h<br>
+      Sáb 12h às 23h<br>
+      Dom 12h às 17h</p>
+    </div>
+
+    <!-- Coluna 2: Mapa -->
+    <div class="col-md-6">
+      <p><strong>Localização no mapa:</strong></p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.999999!2d-46.6330!3d-23.5500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000%3A0x0000!2sMaison%20Lumi%C3%A8re!5e0!3m2!1spt-BR!2sbr!4v0000000000"
+        width="100%" 
+        height="250"
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+
   </div>
-</section>
+</div>
 
-<!-- GALERIA -->
-<section id="galeria">
-  <div class="container">
-    <h2 class="text-center">Galeria</h2>
 
-    <div class="row g-3 mt-3">
-      <div class="col-lg-4 col-md-6">
-        <img src="IMG-20251211-WA0008.jpg" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <img src="IMG-20251211-WA0005.jpg" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <img src="IMG-20251211-WA0010.jpg" class="img-fluid rounded shadow">
+     <h3 class="h5 mt-3">Formulário de Contato</h3>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-4">
+  <h3>Formulário de Contato</h3>
+
+  <form>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="assunto" class="form-label">Assunto</label>
+      <input type="text" class="form-control" id="assunto" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="mensagem" class="form-label">Mensagem</label>
+      <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+
+
+     <!-- TODO: Formulário Bootstrap de contato -->
+   </div>
+ </section>
+
+
+ <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
+ <section id="pedidos" class="bg-light py-5">
+   <div class="container">
+     <h2 class="mb-3">Pedidos Online e Entrega</h2>
+     <p>Oferecemos várias opções para que você possa fazer seu pedido da forma mais prática:</p>
+
+<p><strong>1. WhatsApp:</strong> Envie sua mensagem pelo WhatsApp informando os itens desejados, forma de pagamento e se prefere <strong>retirada</strong> ou <strong>entrega</strong>. Nossa equipe confirma o pedido e o tempo de preparo.</p>
+
+<p><strong>2. Telefone:</strong> Ligue para nossa central de atendimento, faça seu pedido diretamente com um atendente e informe seu endereço (no caso de entrega) ou horário de retirada.</p>
+
+<p><strong>3. Site:</strong> Acesse nosso site, escolha os produtos, adicione ao carrinho e finalize o pedido. Você poderá selecionar <strong>retirada no local</strong> ou <strong>entrega</strong>, além de escolher a forma de pagamento.</p>
+
+<p><strong>4. Aplicativo:</strong> Pelo aplicativo você pode visualizar o cardápio completo, acompanhar promoções, montar seu pedido e acompanhar o status até a entrega ou retirada.</p>
+
+<p><strong>5. Redes sociais (mensagem direta):</strong> Também é possível pedir enviando uma mensagem direta pelo Instagram ou Facebook. Nossa equipe responde rapidamente e orienta sobre o processo.</p>
+
+     <h4>Áreas de Entrega</h4>
+<ul>
+  <li>Bairro Centro - Entrega em até 30 minutos</li>
+  <li>Bairro Jardim das Flores - Entrega em até 40 minutos</li>
+  <li>Bairro Vila Nova - Entrega em até 50 minutos</li>
+  <li>Bairro Santo Antônio - Entrega em até 60 minutos</li>
+</ul>
+
+   </div>
+ </section>
+
+
+ <!-- ================== 9–10. PROMOÇÕES & AVALIAÇÕES ONLINE ================== -->
+ <section id="promocoes" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Promoções Especiais</h2>
+    
+
+<div class="row mt-3">
+  <!-- Promoção de Segunda-feira -->
+  <div class="col-md-4 mb-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Segunda-feira</h5>
+        <p class="card-text">10% de desconto em todas as entradas!</p>
+        <span >Bruschetta Provençal e Cream de Cebola Caramelizada</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- CONTATO -->
-<section id="contato">
-  <div class="container">
-    <h2>Fale Conosco</h2>
-
-    <form>
-      <div class="mb-3">
-        <label>Nome</label>
-        <input type="text" class="form-control">
+  <!-- Combo Especial -->
+  <div class="col-md-4 mb-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Combo Especial</h5>
+        <p class="card-text">Entrada + Prato Principal + Bebida por apenas R$ 90,00</p>
+        <span >Ex.: Bruschetta + Risoto de Limão Siciliano e Camarão + Limonada Artesanal</span>
       </div>
-
-      <div class="mb-3">
-        <label>E-mail</label>
-        <input type="email" class="form-control">
-      </div>
-
-      <div class="mb-3">
-        <label>Mensagem</label>
-        <textarea class="form-control" rows="4"></textarea>
-      </div>
-
-      <button class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
   </div>
-</section>
 
-<footer class="bg-dark text-white text-center py-3">
-  <small class="d-block px-3">© 2025 Maison Lumière — Todos os direitos reservados.</small>
-</footer>
+  <!-- Prato do Dia -->
+  <div class="col-md-4 mb-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Prato do Dia</h5>
+        <p class="card-text">Salmão ao Molho de Maracujá — R$ 64,00</p>
+        <span >Aproveite enquanto durar!</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Programa de Fidelidade -->
+<div class="alert alert-secondary mt-3" role="alert">
+  <strong>Programa de Fidelidade:</strong> A cada 5 pedidos, ganhe uma sobremesa grátis!
+  <span >Crème Brûlée Clássico</span>
+</div>
+
+
+     <h3 class="h5 mt-3">Avaliações Online</h3>
+    <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="https://www.google.com/maps/place/SeuRestaurante" target="_blank">Google Avaliações</a>
+    <span >4,7 ★</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="https://www.tripadvisor.com.br/Restaurant_Review-SeuRestaurante" target="_blank">TripAdvisor</a>
+    <span >4,5 ★</span>
+  </li>
+   </div>
+ </section>
+
+
+ <!-- ================== FOOTER ================== -->
+ <footer class="bg-dark text-white text-center py-3">
+   <small>© 2025 Nome do Restaurante - Todos os direitos reservados.</small>
+ </footer>
+
+
+ <!-- BOOTSTRAP JS -->
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+ </script>
 </body>
-</html>
+  </html>
