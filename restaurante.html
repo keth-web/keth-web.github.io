@@ -312,61 +312,65 @@ Sua filosofia é simples: transformar cada prato em uma experiência memorável.
  <!-- ================== 4. RESERVAS ================== -->
   
  <section id="reservas" class="py-5">
+  <div class="container">
+    <h2 class="mb-3">Reservas</h2>
 
- <div class="container">
-  <h2 class="mb-3">Reservas</h2>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" id="nome" class="form-control">
+        </div>
 
+        <div class="mb-3">
+          <label for="qtPessoas" class="form-label">Quantidade de Pessoas</label>
+          <select id="qtPessoas" class="form-select">
+            <option value="">Selecione</option>
+            <option>2</option>
+            <option>4</option>
+            <option>8</option>
+            <option>12</option>
+          </select>
+        </div>
 
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" id="email" class="form-control">
+        </div>
 
-<div class="card-body">
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" id="telefone" class="form-control">
+        </div>
 
-  <form>
-
-    <div class="mb-3">
-      <label for="nome" class="form-label">Nome</label>
-      <input type="text" id="nome" class="form-control" placeholder="">
+        <button type="submit" class="btn btn-primary">
+          Enviar Reserva
+        </button>
+      </form>
     </div>
 
-    <div class="mb-3">
-      <label for="qtPessoas" class="form-label">Quantidade de Pessoas</label>
-      <select id="qtPessoas" class="form-select">
-        <option value="">Selecione</option>
-        <option>12</option>
-        <option>2</option>
-        <option>8</option>
-        <option>4</option>
-      </select>
+    <!-- Política de Reservas -->
+    <div class="text-center mt-4">
+      <h3 class="h5">Política de Reservas</h3>
+
+      <p>
+        <strong>Cancelamentos:</strong> Reservas podem ser canceladas até 2 horas antes sem cobrança.
+      </p>
+
+      <p>
+        <strong>Tolerância de atraso:</strong> Aceitamos até 15 minutos de atraso. Após esse tempo, a mesa pode ser liberada.
+      </p>
+
+      <p>
+        <strong>Confirmação:</strong> Todas as reservas devem ser confirmadas por e-mail ou WhatsApp.
+      </p>
+
+      <p>
+        <strong>Grupos:</strong> Para grupos acima de 12 pessoas, é necessário entrar em contato com o restaurante e estará sujeito a taxa.
+      </p>
     </div>
-
-    <div class="mb-3">
-      <label for="email" class="form-label">E-mail</label>
-      <input type="email" id="email" class="form-control">
-    </div>
-
-    <div class="mb-3">
-      <label for="telefone" class="form-label">Telefone</label>
-      <input type="tel" id="telefone" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Enviar Reserva</button>
-
-  </form>
-
-</div>
-
-     <!-- TODO: Formulário Bootstrap de reserva -->
-
-
-     <h3 class="h5 mt-3">Política de Reservas</h3>
-    <p><strong>Cancelamentos:</strong> Reservas podem ser canceladas até 2 horas antes sem cobrança.</p>
-
-<p><strong>Tolerância de atraso:</strong> Aceitamos até 15 minutos de atraso. Após esse tempo, a mesa pode ser liberada.</p>
-
-<p><strong>Confirmação:</strong> Todas as reservas devem ser confirmadas por e-mail ou WhatsApp.</p>
-
-<p><strong>Grupos:</strong> Para grupos acima de 12 pessoas, é necessário entrar em contato com o restaurante e estará sujeito a taxa.</p>
-   </div>
- </section>
+  </div>
+</section>
 
 
  <!-- ================== 5. GALERIA ================== -->
